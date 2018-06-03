@@ -1,88 +1,89 @@
-# How-to build a simple blog site
+# How-to deploy mkdocs site to github pages
 
 ## Goals
 
-Setting up a simple blog for myself. Simple means for me small software, not many dependencies, no database.
-
-
-## Requirements
-The blogging software ...
-
-- is easy to build, package and run everywhere. On my local laptop or any server.
-- can be hostsed locally
-- uses Markdown
-- is able to use themes
+I want to run my blog publicly using a service with it I am able to manage my data using markdown files, git but don't need to host the blog on my own. After some investigation I have seen that github pages are meeting my requirements well. Luckily supports mkdocs github pages deployments.
 
 
 ## Investigation
 
-First we are trying to find a suitable blog/wiki software to run our blog. I have tried these solutions:
+First I read some documentation like:
 
-* MDwiki - looks like a good software but installation failed on my pc at least.
-* MkDocs - simple and works like a charm. 
-* dokuwiki - good and well maintained software with a big list of plugins but it seems that it does not support plain markdown
-
-At the end of my investigation choose for MkDocs because it is very simple, meeting my needs and can be configured very simple way.
+* [MkDocs: Deploying](https://www.mkdocs.org/#deploying)
+* [MkDocs: Deploy your Markdown documents on GitHub Pages](https://vinta.ws/code/using-mkdocs-to-deploy-your-markdown-documents-on-github-pages.html)
+* [Creating a GitHub pages site with MkDocs](https://workbook.craftingdigitalhistory.ca/supporting%20materials/gh-pages/)
 
 
 ## Workflow
 
+Then I have set this up using this workflow.
+
 ### Prerequesites
 
-* Running Linux like Ubuntu, Debian, Arch Linux, ...
+* Running mkdocs installation. I have described [here on my blog](2018_05_27_How-to-build-a-simple-blog-site.md) how to setup a simple mkdocs site.
 
-### Prepae Python virtualenv
 
-```
-apt-get install python virtualenv
-virtualenv .venv
-```
+### Preparing mkdocs.yml
 
-### Install mkdocs
-
-prepare file requirements.txt
-```
-pip
-mkdocs
-mkdocs-bootswatch
-```
-
-install software using pip
-```
-source .venv/bin/activate
-pip install -U -r requirements.txt
-```
-
-### Create blog page
+Add these lines to your mkdocs.yml
 
 ```
-mkdocs new blog
-cd blog
+site_name: YOUR SITE NAME
+site_url: https://YOURNAME.github.io/
+repo_url: https://github.com/YOURNAME/YOURREPO/
 ```
 
-### Run
+### Running mkdocs deployment
 
 ```
-vi mkdocs.yml
-vi docs/index.md
-mkdocs serve
+mkdocs gh-deploy --clean
 ```
 
-Point your browser to [http://localhost:8000](http://localhost:8080) to test it
+Point your browser to [https://YOURNAME.github.io/YOURREPO](https://YOURNAME.github.io/YOURREPO)
+
+### Creating a redirec from github pages to your blog
+
+I at least dont like to have a contect root for "/blog" like [https://bboortz.github.io/blog](https://bboortz.github.io/blog). 
+So that I have decided to create a redirect from [https://bboortz.github.io/](https://bboortz.github.io/) to [https://bboortz.github.io/blog](https://bboortz.github.io/blog)
+
+You simply need to create a file index.html at the root of your gitpub pages directory and push it. My repository is: [https://github.com/bboortz/bboortz.github.io](https://github.com/bboortz/bboortz.github.io)
+
+
+The content of the index.html looks like this:
+```
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="refresh" content="0; url=https://bboortz.github.io/blog">
+        <script type="text/javascript">
+            window.location.href = "https://bboortz.github.io/blog"
+        </script>
+        <title>Page Redirection</title>
+    </head>
+    <body>
+        <!-- Note: don't tell people to `click` the link, just tell them that it is a link. -->
+        If you are not redirected automatically, follow this <a href='https://bboortz.github.io/blog'>link to benni's blog</a>.
+    </body>
+</html>
+
+```
+
+Now you are able to use [https://YOURNAME.github.io/](https://YOURNAME.github.io/) for your mkdocs site.
 
 
 ## Conclusion
 
-With mkdocs is it quite easy to setup simple websites like blogs and run this on any system.
+As we can see it is not very hard to push your mkdocs site as github pages. Unfortunately I was not able to push the pages directly to the contect root "/". So that have created a redirect using the index.html
 
 
 ## Links
 
-* [https://mkdocs.org](https://mkdocs.org)
+* [stackoverflow: Redirect from an HTML page](https://stackoverflow.com/questions/5411538/redirect-from-an-html-page)
 
 
 ---------------------------------------
 ```
-Created: 2018-05-27 
+Created: 2018-06-03
 Updated: 2018-06-03
 ```
