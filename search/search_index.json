@@ -1,0 +1,14 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "blog\n\n\nbenni's blog",
+            "title": "blog"
+        },
+        {
+            "location": "/#blog",
+            "text": "benni's blog",
+            "title": "blog"
+        }
+    ]
+}
