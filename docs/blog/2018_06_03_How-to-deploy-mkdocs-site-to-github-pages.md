@@ -2,7 +2,7 @@
 
 ## Goals
 
-I want to run my blog publicly using a service with it I am able to manage my data using markdown files, git but don't need to host the blog on my own. After some investigation I have seen that github pages are meeting my requirements well. Luckily supports mkdocs github pages deployments.
+I want to run my blog publicly using a service with it I am able to manage my data using markdown files and git but don't need to host the blog on my own. After some investigation I have seen that github pages are meeting my requirements well. Luckily supports mkdocs github pages deployments.
 
 
 ## Investigation
