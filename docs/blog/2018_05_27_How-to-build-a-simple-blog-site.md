@@ -31,7 +31,7 @@ At the end of my investigation choose for MkDocs because it is very simple, meet
 
 * Running Linux like Ubuntu, Debian, Arch Linux, ...
 
-### Prepae Python virtualenv
+### Prepare Python virtualenv
 
 ```
 apt-get install python virtualenv
