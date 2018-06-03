@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="Benjamin Boortz">
-        
+        <link rel="canonical" href="https://bboortz.github.io/blog/2018_06_03_How-to-deploy-mkdocs-site-to-github-pages/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
         <title>2018-06-03 - How-to-deploy mkdocs site to github pages - Benni's Blog</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
@@ -96,7 +96,7 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#how-to-build-a-simple-blog-site">How-to build a simple blog site</a></li>
+        <li class="main active"><a href="#how-to-deploy-mkdocs-site-to-github-pages">How-to deploy mkdocs site to github pages</a></li>
             <li><a href="#goals">Goals</a></li>
             <li><a href="#investigation">Investigation</a></li>
             <li><a href="#workflow">Workflow</a></li>
@@ -106,63 +106,64 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="how-to-build-a-simple-blog-site">How-to build a simple blog site</h1>
+<h1 id="how-to-deploy-mkdocs-site-to-github-pages">How-to deploy mkdocs site to github pages</h1>
 <h2 id="goals">Goals</h2>
 <p>I want to run my blog publicly using a service with it I am able to manage my data using markdown files, git but don't need to host the blog on my own. After some investigation I have seen that github pages are meeting my requirements well. Luckily supports mkdocs github pages deployments.</p>
 <h2 id="investigation">Investigation</h2>
-<p>First I read some documentation</p>
+<p>First I read some documentation like:</p>
 <ul>
 <li><a href="https://www.mkdocs.org/#deploying">MkDocs: Deploying</a></li>
 <li><a href="https://vinta.ws/code/using-mkdocs-to-deploy-your-markdown-documents-on-github-pages.html">MkDocs: Deploy your Markdown documents on GitHub Pages</a></li>
 <li><a href="https://workbook.craftingdigitalhistory.ca/supporting%20materials/gh-pages/">Creating a GitHub pages site with MkDocs</a></li>
 </ul>
-<p>First we are trying to find a suitable blog/wiki software to run our blog. I have tried these solutions:</p>
-<ul>
-<li>MDwiki - looks like a good software but installation failed on my pc at least.</li>
-<li>MkDocs - simple and works like a charm. </li>
-<li>dokuwiki - good and well maintained software with a big list of plugins but it seems that it does not support plain markdown</li>
-</ul>
-<p>At the end of my investigation choose for MkDocs because it is very simple, meeting my needs and can be configured very simple way.</p>
 <h2 id="workflow">Workflow</h2>
-<p>Then I have set this up using this workflow</p>
+<p>Then I have set this up using this workflow.</p>
 <h3 id="prerequesites">Prerequesites</h3>
 <ul>
 <li>Running mkdocs installation. I have described <a href="../2018_05_27_How-to-build-a-simple-blog-site/">here on my blog</a> how to setup a simple mkdocs site.</li>
 </ul>
-<h3 id="prepae-python-virtualenv">Prepae Python virtualenv</h3>
-<pre><code>apt-get install python virtualenv
-virtualenv .venv
+<h3 id="preparing-mkdocsyml">Preparing mkdocs.yml</h3>
+<p>Add these lines to your mkdocs.yml</p>
+<pre><code>site_name: YOUR SITE NAME
+site_url: https://YOURNAME.github.io/
+repo_url: https://github.com/YOURNAME/YOURREPO/
 </code></pre>
 
-<h3 id="install-mkdocs">Install mkdocs</h3>
-<p>prepare file requirements.txt</p>
-<pre><code>pip
-mkdocs
-mkdocs-bootswatch
+<h3 id="running-mkdocs-deployment">Running mkdocs deployment</h3>
+<pre><code>mkdocs gh-deploy --clean
 </code></pre>
 
-<p>install software using pip</p>
-<pre><code>source .venv/bin/activate
-pip install -U -r requirements.txt
+<p>Point your browser to <a href="https://YOURNAME.github.io/YOURREPO">https://YOURNAME.github.io/YOURREPO</a></p>
+<h3 id="creating-a-redirec-from-github-pages-to-your-blog">Creating a redirec from github pages to your blog</h3>
+<p>I at least dont like to have a contect root for "/blog" like <a href="https://bboortz.github.io/blog">https://bboortz.github.io/blog</a>. 
+So that I have decided to create a redirect from <a href="https://bboortz.github.io/">https://bboortz.github.io/</a> to <a href="https://bboortz.github.io/blog">https://bboortz.github.io/blog</a></p>
+<p>You simply need to create at the root of your gitpub pages directory a index.html file and push it. My repository is: <a href="https://github.com/bboortz/bboortz.github.io">https://github.com/bboortz/bboortz.github.io</a></p>
+<p>index.html content</p>
+<pre><code>&lt;!DOCTYPE HTML&gt;
+&lt;html lang=&quot;en-US&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;meta http-equiv=&quot;refresh&quot; content=&quot;0; url=https://bboortz.github.io/blog&quot;&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            window.location.href = &quot;https://bboortz.github.io/blog&quot;
+        &lt;/script&gt;
+        &lt;title&gt;Page Redirection&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- Note: don't tell people to `click` the link, just tell them that it is a link. --&gt;
+        If you are not redirected automatically, follow this &lt;a href='https://bboortz.github.io/blog'&gt;link to benni's blog&lt;/a&gt;.
+    &lt;/body&gt;
+&lt;/html&gt;
+
 </code></pre>
 
-<h3 id="create-blog-page">Create blog page</h3>
-<pre><code>mkdocs new blog
-cd blog
-</code></pre>
-
-<h3 id="run">Run</h3>
-<pre><code>vi mkdocs.yml
-vi docs/index.md
-mkdocs serve
-</code></pre>
-
-<p>Point your browser to <a href="http://localhost:8080">http://localhost:8000</a> to test it</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>With mkdocs is it quite easy to setup simple websites like blogs and run this on any system.</p>
+<p>At the we see it is not very hard to push your mkdocs site as github pages. Unfortunately I was not able to push the pages directly to the contect root "/". So that have created a redirect using the index.html</p>
+<p>At the e
+With mkdocs is it quite easy to setup simple websites like blogs and run this on any system.</p>
 <h2 id="links">Links</h2>
 <ul>
-<li><a href="https://mkdocs.org">https://mkdocs.org</a></li>
+<li><a href="https://stackoverflow.com/questions/5411538/redirect-from-an-html-page">stackoverflow: Redirect from an HTML page</a></li>
 </ul>
 <hr />
 <pre><code>Created: 2018-05-27 

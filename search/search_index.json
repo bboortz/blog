@@ -102,13 +102,13 @@
         },
         {
             "location": "/blog/2018_06_03_How-to-deploy-mkdocs-site-to-github-pages/",
-            "text": "How-to build a simple blog site\n\n\nGoals\n\n\nI want to run my blog publicly using a service with it I am able to manage my data using markdown files, git but don't need to host the blog on my own. After some investigation I have seen that github pages are meeting my requirements well. Luckily supports mkdocs github pages deployments.\n\n\nInvestigation\n\n\nFirst I read some documentation\n\n\n\n\nMkDocs: Deploying\n\n\nMkDocs: Deploy your Markdown documents on GitHub Pages\n\n\nCreating a GitHub pages site with MkDocs\n\n\n\n\nFirst we are trying to find a suitable blog/wiki software to run our blog. I have tried these solutions:\n\n\n\n\nMDwiki - looks like a good software but installation failed on my pc at least.\n\n\nMkDocs - simple and works like a charm. \n\n\ndokuwiki - good and well maintained software with a big list of plugins but it seems that it does not support plain markdown\n\n\n\n\nAt the end of my investigation choose for MkDocs because it is very simple, meeting my needs and can be configured very simple way.\n\n\nWorkflow\n\n\nThen I have set this up using this workflow\n\n\nPrerequesites\n\n\n\n\nRunning mkdocs installation. I have described \nhere on my blog\n how to setup a simple mkdocs site.\n\n\n\n\nPrepae Python virtualenv\n\n\napt-get install python virtualenv\nvirtualenv .venv\n\n\n\n\nInstall mkdocs\n\n\nprepare file requirements.txt\n\n\npip\nmkdocs\nmkdocs-bootswatch\n\n\n\n\ninstall software using pip\n\n\nsource .venv/bin/activate\npip install -U -r requirements.txt\n\n\n\n\nCreate blog page\n\n\nmkdocs new blog\ncd blog\n\n\n\n\nRun\n\n\nvi mkdocs.yml\nvi docs/index.md\nmkdocs serve\n\n\n\n\nPoint your browser to \nhttp://localhost:8000\n to test it\n\n\nConclusion\n\n\nWith mkdocs is it quite easy to setup simple websites like blogs and run this on any system.\n\n\nLinks\n\n\n\n\nhttps://mkdocs.org\n\n\n\n\n\n\nCreated: 2018-05-27 \nUpdated: 2018-06-03",
+            "text": "How-to deploy mkdocs site to github pages\n\n\nGoals\n\n\nI want to run my blog publicly using a service with it I am able to manage my data using markdown files, git but don't need to host the blog on my own. After some investigation I have seen that github pages are meeting my requirements well. Luckily supports mkdocs github pages deployments.\n\n\nInvestigation\n\n\nFirst I read some documentation like:\n\n\n\n\nMkDocs: Deploying\n\n\nMkDocs: Deploy your Markdown documents on GitHub Pages\n\n\nCreating a GitHub pages site with MkDocs\n\n\n\n\nWorkflow\n\n\nThen I have set this up using this workflow.\n\n\nPrerequesites\n\n\n\n\nRunning mkdocs installation. I have described \nhere on my blog\n how to setup a simple mkdocs site.\n\n\n\n\nPreparing mkdocs.yml\n\n\nAdd these lines to your mkdocs.yml\n\n\nsite_name: YOUR SITE NAME\nsite_url: https://YOURNAME.github.io/\nrepo_url: https://github.com/YOURNAME/YOURREPO/\n\n\n\n\nRunning mkdocs deployment\n\n\nmkdocs gh-deploy --clean\n\n\n\n\nPoint your browser to \nhttps://YOURNAME.github.io/YOURREPO\n\n\nCreating a redirec from github pages to your blog\n\n\nI at least dont like to have a contect root for \"/blog\" like \nhttps://bboortz.github.io/blog\n. \nSo that I have decided to create a redirect from \nhttps://bboortz.github.io/\n to \nhttps://bboortz.github.io/blog\n\n\nYou simply need to create at the root of your gitpub pages directory a index.html file and push it. My repository is: \nhttps://github.com/bboortz/bboortz.github.io\n\n\nindex.html content\n\n\n<!DOCTYPE HTML>\n<html lang=\"en-US\">\n    <head>\n        <meta charset=\"UTF-8\">\n        <meta http-equiv=\"refresh\" content=\"0; url=https://bboortz.github.io/blog\">\n        <script type=\"text/javascript\">\n            window.location.href = \"https://bboortz.github.io/blog\"\n        </script>\n        <title>Page Redirection</title>\n    </head>\n    <body>\n        <!-- Note: don't tell people to `click` the link, just tell them that it is a link. -->\n        If you are not redirected automatically, follow this <a href='https://bboortz.github.io/blog'>link to benni's blog</a>.\n    </body>\n</html>\n\n\n\n\n\nConclusion\n\n\nAt the we see it is not very hard to push your mkdocs site as github pages. Unfortunately I was not able to push the pages directly to the contect root \"/\". So that have created a redirect using the index.html\n\n\nAt the e\nWith mkdocs is it quite easy to setup simple websites like blogs and run this on any system.\n\n\nLinks\n\n\n\n\nstackoverflow: Redirect from an HTML page\n\n\n\n\n\n\nCreated: 2018-05-27 \nUpdated: 2018-06-03",
             "title": "2018-06-03 - How-to-deploy mkdocs site to github pages"
         },
         {
-            "location": "/blog/2018_06_03_How-to-deploy-mkdocs-site-to-github-pages/#how-to-build-a-simple-blog-site",
+            "location": "/blog/2018_06_03_How-to-deploy-mkdocs-site-to-github-pages/#how-to-deploy-mkdocs-site-to-github-pages",
             "text": "",
-            "title": "How-to build a simple blog site"
+            "title": "How-to deploy mkdocs site to github pages"
         },
         {
             "location": "/blog/2018_06_03_How-to-deploy-mkdocs-site-to-github-pages/#goals",
@@ -117,12 +117,12 @@
         },
         {
             "location": "/blog/2018_06_03_How-to-deploy-mkdocs-site-to-github-pages/#investigation",
-            "text": "First I read some documentation   MkDocs: Deploying  MkDocs: Deploy your Markdown documents on GitHub Pages  Creating a GitHub pages site with MkDocs   First we are trying to find a suitable blog/wiki software to run our blog. I have tried these solutions:   MDwiki - looks like a good software but installation failed on my pc at least.  MkDocs - simple and works like a charm.   dokuwiki - good and well maintained software with a big list of plugins but it seems that it does not support plain markdown   At the end of my investigation choose for MkDocs because it is very simple, meeting my needs and can be configured very simple way.",
+            "text": "First I read some documentation like:   MkDocs: Deploying  MkDocs: Deploy your Markdown documents on GitHub Pages  Creating a GitHub pages site with MkDocs",
             "title": "Investigation"
         },
         {
             "location": "/blog/2018_06_03_How-to-deploy-mkdocs-site-to-github-pages/#workflow",
-            "text": "Then I have set this up using this workflow",
+            "text": "Then I have set this up using this workflow.",
             "title": "Workflow"
         },
         {
@@ -131,33 +131,28 @@
             "title": "Prerequesites"
         },
         {
-            "location": "/blog/2018_06_03_How-to-deploy-mkdocs-site-to-github-pages/#prepae-python-virtualenv",
-            "text": "apt-get install python virtualenv\nvirtualenv .venv",
-            "title": "Prepae Python virtualenv"
+            "location": "/blog/2018_06_03_How-to-deploy-mkdocs-site-to-github-pages/#preparing-mkdocsyml",
+            "text": "Add these lines to your mkdocs.yml  site_name: YOUR SITE NAME\nsite_url: https://YOURNAME.github.io/\nrepo_url: https://github.com/YOURNAME/YOURREPO/",
+            "title": "Preparing mkdocs.yml"
         },
         {
-            "location": "/blog/2018_06_03_How-to-deploy-mkdocs-site-to-github-pages/#install-mkdocs",
-            "text": "prepare file requirements.txt  pip\nmkdocs\nmkdocs-bootswatch  install software using pip  source .venv/bin/activate\npip install -U -r requirements.txt",
-            "title": "Install mkdocs"
+            "location": "/blog/2018_06_03_How-to-deploy-mkdocs-site-to-github-pages/#running-mkdocs-deployment",
+            "text": "mkdocs gh-deploy --clean  Point your browser to  https://YOURNAME.github.io/YOURREPO",
+            "title": "Running mkdocs deployment"
         },
         {
-            "location": "/blog/2018_06_03_How-to-deploy-mkdocs-site-to-github-pages/#create-blog-page",
-            "text": "mkdocs new blog\ncd blog",
-            "title": "Create blog page"
-        },
-        {
-            "location": "/blog/2018_06_03_How-to-deploy-mkdocs-site-to-github-pages/#run",
-            "text": "vi mkdocs.yml\nvi docs/index.md\nmkdocs serve  Point your browser to  http://localhost:8000  to test it",
-            "title": "Run"
+            "location": "/blog/2018_06_03_How-to-deploy-mkdocs-site-to-github-pages/#creating-a-redirec-from-github-pages-to-your-blog",
+            "text": "I at least dont like to have a contect root for \"/blog\" like  https://bboortz.github.io/blog . \nSo that I have decided to create a redirect from  https://bboortz.github.io/  to  https://bboortz.github.io/blog  You simply need to create at the root of your gitpub pages directory a index.html file and push it. My repository is:  https://github.com/bboortz/bboortz.github.io  index.html content  <!DOCTYPE HTML>\n<html lang=\"en-US\">\n    <head>\n        <meta charset=\"UTF-8\">\n        <meta http-equiv=\"refresh\" content=\"0; url=https://bboortz.github.io/blog\">\n        <script type=\"text/javascript\">\n            window.location.href = \"https://bboortz.github.io/blog\"\n        </script>\n        <title>Page Redirection</title>\n    </head>\n    <body>\n        <!-- Note: don't tell people to `click` the link, just tell them that it is a link. -->\n        If you are not redirected automatically, follow this <a href='https://bboortz.github.io/blog'>link to benni's blog</a>.\n    </body>\n</html>",
+            "title": "Creating a redirec from github pages to your blog"
         },
         {
             "location": "/blog/2018_06_03_How-to-deploy-mkdocs-site-to-github-pages/#conclusion",
-            "text": "With mkdocs is it quite easy to setup simple websites like blogs and run this on any system.",
+            "text": "At the we see it is not very hard to push your mkdocs site as github pages. Unfortunately I was not able to push the pages directly to the contect root \"/\". So that have created a redirect using the index.html  At the e\nWith mkdocs is it quite easy to setup simple websites like blogs and run this on any system.",
             "title": "Conclusion"
         },
         {
             "location": "/blog/2018_06_03_How-to-deploy-mkdocs-site-to-github-pages/#links",
-            "text": "https://mkdocs.org    Created: 2018-05-27 \nUpdated: 2018-06-03",
+            "text": "stackoverflow: Redirect from an HTML page    Created: 2018-05-27 \nUpdated: 2018-06-03",
             "title": "Links"
         },
         {
