@@ -2,13 +2,18 @@
     "docs": [
         {
             "location": "/",
-            "text": "blog\n\n\nbenni's blog",
+            "text": "blog\n\n\nbenni's blog\n\n\ntest\n\n\n1",
             "title": "blog"
         },
         {
             "location": "/#blog",
             "text": "benni's blog",
             "title": "blog"
+        },
+        {
+            "location": "/#test",
+            "text": "1",
+            "title": "test"
         }
     ]
 }
