@@ -41,7 +41,7 @@ mkdocs gh-deploy --clean
 
 Point your browser to [https://YOURNAME.github.io/YOURREPO](https://YOURNAME.github.io/YOURREPO)
 
-### Creating a redirec from github pages to your blog
+### Creating a redirect from github pages to your blog
 
 I at least dont like to have a contect root for "/blog" like [https://bboortz.github.io/blog](https://bboortz.github.io/blog). 
 So that I have decided to create a redirect from [https://bboortz.github.io/](https://bboortz.github.io/) to [https://bboortz.github.io/blog](https://bboortz.github.io/blog)
