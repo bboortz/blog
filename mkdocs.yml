@@ -3,7 +3,7 @@ site_name: Benni's Blog
 site_description: benni's blog
 site_author: Benjamin Boortz
 copyright: Benjamin Boortz <bennis.blog@secure.mailbox.org>
-repo_url: https://github.com/bboortz/bboortz.github.io/
+repo_url: https://github.com/bboortz/blog/
 theme: cyborg
 pages:
   - Home: index.md
