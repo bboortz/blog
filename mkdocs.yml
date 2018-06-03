@@ -1,0 +1,22 @@
+site_name: Benni's Blog
+site_url: https://bboortz.elmah.io/
+site_description: benni's blog
+site_author: Benjamin Boortz
+copyright: Benjamin Boortz <bennis.blog@secure.mailbox.org>
+repo_url: https://github.com/bboortz/bboortz.github.io/
+theme: cyborg
+#theme_dir: "mkdocs_bootstrap"
+#extra_css:
+#    - style.css
+#markdown_extensions:
+#  - toc:
+#      permalink: True
+      # separator: "_"
+#theme: readthedocs
+#theme: windmill
+#pages:
+#  - Home: index.md
+#  - Blog:
+#    - 2018-05-27 - How-to build a simple blog site: blog/2018_05_27_How-to-build-a-simple-blog-site.md
+#  - Links: links.md
+#  - About: about.md
