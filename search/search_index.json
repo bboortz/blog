@@ -2,13 +2,33 @@
     "docs": [
         {
             "location": "/",
-            "text": "Welcome to Benni's Blog\n\n\nMy private blog which is available at \nhttps://bboortz.github.io\n.\nHere you can find some resources about stuff I am interested in.\n\n\nMore Resources\n\n\n\n\nhttps://github.com/bboortz\n\n\nhttps://chaos.social/@bboortz",
+            "text": "Welcome to Benni's Blog\n\n\nMy private blog which is available at \nhttps://bboortz.github.io\n.\nHere you can find some resources about stuff I am interested in.\n\n\nHow-to contribute?\n\n\nYou want to contribute to my blog in any way? Fixing typos, bugs, etc.\nSimply fork my git repository \nhttps://github.com/bboortz/blog\n, make your changes and create a pull request.\n\n\nSome usefull commands for this blog\n\n\nHow-to run this blog in preview mode?\n\n\nmake site_preview\n\n\n\n\nPoint your browser to \nhttp://localhost:8000\n.\n\n\nHow-to deploy this blog as github page?\n\n\nmake site_deploy\n\n\n\n\nPoint your browser to \nhttps://bboortz.github.io\n.\n\n\nMore Resources\n\n\n\n\nhttps://github.com/bboortz\n\n\nhttps://chaos.social/@bboortz",
             "title": "Home"
         },
         {
             "location": "/#welcome-to-bennis-blog",
             "text": "My private blog which is available at  https://bboortz.github.io .\nHere you can find some resources about stuff I am interested in.",
             "title": "Welcome to Benni's Blog"
+        },
+        {
+            "location": "/#how-to-contribute",
+            "text": "You want to contribute to my blog in any way? Fixing typos, bugs, etc.\nSimply fork my git repository  https://github.com/bboortz/blog , make your changes and create a pull request.",
+            "title": "How-to contribute?"
+        },
+        {
+            "location": "/#some-usefull-commands-for-this-blog",
+            "text": "",
+            "title": "Some usefull commands for this blog"
+        },
+        {
+            "location": "/#how-to-run-this-blog-in-preview-mode",
+            "text": "make site_preview  Point your browser to  http://localhost:8000 .",
+            "title": "How-to run this blog in preview mode?"
+        },
+        {
+            "location": "/#how-to-deploy-this-blog-as-github-page",
+            "text": "make site_deploy  Point your browser to  https://bboortz.github.io .",
+            "title": "How-to deploy this blog as github page?"
         },
         {
             "location": "/#more-resources",
