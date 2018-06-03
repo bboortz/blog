@@ -3,7 +3,7 @@
         {
             "location": "/",
             "text": "blog\n\n\nbenni's blog\n\n\ntest\n\n\n1",
-            "title": "blog"
+            "title": "Home"
         },
         {
             "location": "/#blog",
@@ -14,6 +14,96 @@
             "location": "/#test",
             "text": "1",
             "title": "test"
+        },
+        {
+            "location": "/blog/2018_05_27_How-to-build-a-simple-blog-site/",
+            "text": "How-to build a simple blog site\n\n\nGoals\n\n\nSetting up a simple blog for myself. Simple means for me small software, not many dependencies, no database.\n\n\nRequirements\n\n\nThe blogging software ...\n\n\n\n\nis easy to build, package and run everywhere. On my local laptop or any server.\n\n\ncan be hostsed locally\n\n\nuses Markdown\n\n\nis able to use themes\n\n\n\n\nInvestigation\n\n\nFirst we are trying to find a suitable blog/wiki software to run our blog. I have tried these solutions:\n\n\n\n\nMDwiki - looks like a good software but installation failed on my pc at least.\n\n\nMkDocs - simple and works like a charm. \n\n\ndokuwiki - good and well maintained software with a big list of plugins but it seems that it does not support plain markdown\n\n\n\n\nAt the end of my investigation choose for MkDocs because it is very simple, meeting my needs and can be configured very simple way.\n\n\nWorkflow\n\n\nPrerequesites\n\n\n\n\nRunning Linux like Ubuntu, Debian, Arch Linux, ...\n\n\n\n\nPrepae Python virtualenv\n\n\napt-get install python virtualenv\nvirtualenv .venv\n\n\n\n\nInstall mkdocs\n\n\nprepare file requirements.txt\n\n\npip\nmkdocs\nmkdocs-bootswatch\n\n\n\n\ninstall software using pip\n\n\nsource .venv/bin/activate\npip install -U -r requirements.txt\n\n\n\n\nCreate blog page\n\n\nmkdocs new blog\ncd blog\n\n\n\n\nRun\n\n\nvi mkdocs.yml\nvi docs/index.md\nmkdocs serve\n\n\n\n\nPoint your browser to \nhttp://localhost:8000\n to test it\n\n\nConclusion\n\n\nWith mkdocs is it quite easy to setup simple websites like blogs and run this on any system.\n\n\nLinks\n\n\n\n\nhttps://mkdocs.org\n\n\n\n\n\n\nCreated: 2018-05-27 \nUpdated: 2018-06-03",
+            "title": "2018-05-27 - How-to build a simple blog site"
+        },
+        {
+            "location": "/blog/2018_05_27_How-to-build-a-simple-blog-site/#how-to-build-a-simple-blog-site",
+            "text": "",
+            "title": "How-to build a simple blog site"
+        },
+        {
+            "location": "/blog/2018_05_27_How-to-build-a-simple-blog-site/#goals",
+            "text": "Setting up a simple blog for myself. Simple means for me small software, not many dependencies, no database.",
+            "title": "Goals"
+        },
+        {
+            "location": "/blog/2018_05_27_How-to-build-a-simple-blog-site/#requirements",
+            "text": "The blogging software ...   is easy to build, package and run everywhere. On my local laptop or any server.  can be hostsed locally  uses Markdown  is able to use themes",
+            "title": "Requirements"
+        },
+        {
+            "location": "/blog/2018_05_27_How-to-build-a-simple-blog-site/#investigation",
+            "text": "First we are trying to find a suitable blog/wiki software to run our blog. I have tried these solutions:   MDwiki - looks like a good software but installation failed on my pc at least.  MkDocs - simple and works like a charm.   dokuwiki - good and well maintained software with a big list of plugins but it seems that it does not support plain markdown   At the end of my investigation choose for MkDocs because it is very simple, meeting my needs and can be configured very simple way.",
+            "title": "Investigation"
+        },
+        {
+            "location": "/blog/2018_05_27_How-to-build-a-simple-blog-site/#workflow",
+            "text": "",
+            "title": "Workflow"
+        },
+        {
+            "location": "/blog/2018_05_27_How-to-build-a-simple-blog-site/#prerequesites",
+            "text": "Running Linux like Ubuntu, Debian, Arch Linux, ...",
+            "title": "Prerequesites"
+        },
+        {
+            "location": "/blog/2018_05_27_How-to-build-a-simple-blog-site/#prepae-python-virtualenv",
+            "text": "apt-get install python virtualenv\nvirtualenv .venv",
+            "title": "Prepae Python virtualenv"
+        },
+        {
+            "location": "/blog/2018_05_27_How-to-build-a-simple-blog-site/#install-mkdocs",
+            "text": "prepare file requirements.txt  pip\nmkdocs\nmkdocs-bootswatch  install software using pip  source .venv/bin/activate\npip install -U -r requirements.txt",
+            "title": "Install mkdocs"
+        },
+        {
+            "location": "/blog/2018_05_27_How-to-build-a-simple-blog-site/#create-blog-page",
+            "text": "mkdocs new blog\ncd blog",
+            "title": "Create blog page"
+        },
+        {
+            "location": "/blog/2018_05_27_How-to-build-a-simple-blog-site/#run",
+            "text": "vi mkdocs.yml\nvi docs/index.md\nmkdocs serve  Point your browser to  http://localhost:8000  to test it",
+            "title": "Run"
+        },
+        {
+            "location": "/blog/2018_05_27_How-to-build-a-simple-blog-site/#conclusion",
+            "text": "With mkdocs is it quite easy to setup simple websites like blogs and run this on any system.",
+            "title": "Conclusion"
+        },
+        {
+            "location": "/blog/2018_05_27_How-to-build-a-simple-blog-site/#links",
+            "text": "https://mkdocs.org    Created: 2018-05-27 \nUpdated: 2018-06-03",
+            "title": "Links"
+        },
+        {
+            "location": "/links/",
+            "text": "Some Links\n\n\n\n\nVerantwortlich im Sinne des Presserechts - Wikipedia \n\n\nTelemediengesetz - Wikipedia",
+            "title": "Links"
+        },
+        {
+            "location": "/links/#some-links",
+            "text": "Verantwortlich im Sinne des Presserechts - Wikipedia   Telemediengesetz - Wikipedia",
+            "title": "Some Links"
+        },
+        {
+            "location": "/about/",
+            "text": "About\n\n\nThis is my own private blog\n\n\nImpressium and ViSdp\n\n\nBenjamin Boortz\nLuchtenmakerweg 25\n38126 Braunschweig\nE-Mail: bennis.blog@secure.mailbox.org",
+            "title": "About"
+        },
+        {
+            "location": "/about/#about",
+            "text": "This is my own private blog",
+            "title": "About"
+        },
+        {
+            "location": "/about/#impressium-and-visdp",
+            "text": "Benjamin Boortz\nLuchtenmakerweg 25\n38126 Braunschweig\nE-Mail: bennis.blog@secure.mailbox.org",
+            "title": "Impressium and ViSdp"
         }
     ]
 }
