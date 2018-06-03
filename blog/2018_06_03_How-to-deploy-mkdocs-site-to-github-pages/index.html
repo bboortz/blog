@@ -137,8 +137,8 @@ repo_url: https://github.com/YOURNAME/YOURREPO/
 <h3 id="creating-a-redirec-from-github-pages-to-your-blog">Creating a redirec from github pages to your blog</h3>
 <p>I at least dont like to have a contect root for "/blog" like <a href="https://bboortz.github.io/blog">https://bboortz.github.io/blog</a>. 
 So that I have decided to create a redirect from <a href="https://bboortz.github.io/">https://bboortz.github.io/</a> to <a href="https://bboortz.github.io/blog">https://bboortz.github.io/blog</a></p>
-<p>You simply need to create at the root of your gitpub pages directory a index.html file and push it. My repository is: <a href="https://github.com/bboortz/bboortz.github.io">https://github.com/bboortz/bboortz.github.io</a></p>
-<p>index.html content</p>
+<p>You simply need to create a file index.html at the root of your gitpub pages directory and push it. My repository is: <a href="https://github.com/bboortz/bboortz.github.io">https://github.com/bboortz/bboortz.github.io</a></p>
+<p>The content of the index.html looks like this:</p>
 <pre><code>&lt;!DOCTYPE HTML&gt;
 &lt;html lang=&quot;en-US&quot;&gt;
     &lt;head&gt;
@@ -157,16 +157,15 @@ So that I have decided to create a redirect from <a href="https://bboortz.github
 
 </code></pre>
 
+<p>Now you are able to use <a href="https://YOURNAME.github.io/">https://YOURNAME.github.io/</a> for your mkdocs site.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>At the we see it is not very hard to push your mkdocs site as github pages. Unfortunately I was not able to push the pages directly to the contect root "/". So that have created a redirect using the index.html</p>
-<p>At the e
-With mkdocs is it quite easy to setup simple websites like blogs and run this on any system.</p>
+<p>As we can see it is not very hard to push your mkdocs site as github pages. Unfortunately I was not able to push the pages directly to the contect root "/". So that have created a redirect using the index.html</p>
 <h2 id="links">Links</h2>
 <ul>
 <li><a href="https://stackoverflow.com/questions/5411538/redirect-from-an-html-page">stackoverflow: Redirect from an HTML page</a></li>
 </ul>
 <hr />
-<pre><code>Created: 2018-05-27 
+<pre><code>Created: 2018-06-03
 Updated: 2018-06-03
 </code></pre></div>
         </div>
