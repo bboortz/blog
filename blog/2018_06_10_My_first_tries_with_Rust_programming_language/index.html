@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Benjamin Boortz">
+        <link rel="canonical" href="https://bboortz.github.io/blog/2018_06_10_My_first_tries_with_Rust_programming_language/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>2018-06-10 - My first tries with Rust programming language - Benni's Blog</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Benni's Blog</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../2018_05_27_How-to-build-a-simple-blog-site/">2018-05-27 - How-to build a simple blog site</a>
+</li>
+                            
+<li >
+    <a href="../2018_06_03_How-to-deploy-mkdocs-site-to-github-pages/">2018-06-03 - How-to deploy mkdocs site to github pages</a>
+</li>
+                            
+<li class="active">
+    <a href="./">2018-06-10 - My first tries with Rust programming language</a>
+</li>
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="../../links/">Links</a>
+                    </li>
+                    <li >
+                        <a href="../../about/">About</a>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../2018_06_03_How-to-deploy-mkdocs-site-to-github-pages/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../links/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/bboortz/blog/edit/master/docs/blog/2018_06_10_My_first_tries_with_Rust_programming_language.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#my-first-tries-with-rust-programming-language">My first tries with Rust programming language</a></li>
+        <li class="main "><a href="#goals">Goals</a></li>
+        <li class="main "><a href="#process">Process</a></li>
+            <li><a href="#investigations">Investigations</a></li>
+            <li><a href="#setting-up-a-local-dev-environment">Setting up a local dev environment</a></li>
+            <li><a href="#hello-world-program">Hello World Program</a></li>
+            <li><a href="#a-serious-example">A serious example</a></li>
+        <li class="main "><a href="#conclusion">Conclusion</a></li>
+        <li class="main "><a href="#links">Links</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="my-first-tries-with-rust-programming-language">My first tries with Rust programming language</h1>
+<p>The last months I have seen a lot of blog that are writing about the Rust programming language. Sometimes how good it is, sometimes why it is better then other programming languages. 
+Then I have seen a blog series <a href="https://os.phil-opp.com/">Writing an OS in Rust</a> and <a href="https://os.phil-opp.com/second-edition/">Writing an OS in Rust - Second Edition</a>.
+I thought myself why not give Rust a try. </p>
+<h1 id="goals">Goals</h1>
+<p>Inspired by this I am trying Rust a few hours, understanding principles and design goals, and build something really simple.
+Therefore I will read some documenation, setup my local dev environment, will develop a hello world program and after that a bit more complex program.</p>
+<h1 id="process">Process</h1>
+<h2 id="investigations">Investigations</h2>
+<p>I have started my work with reading some documentation, esspecially:</p>
+<ul>
+<li><a href="https://www.rust-lang.org/">The Rust Programming Language</a></li>
+<li><a href="https://doc.rust-lang.org/1.4.0/complement-design-faq.html">The Rust Design FAQ</a></li>
+<li><a href="https://hacks.mozilla.org/2015/05/diving-into-rust-for-the-first-time/">Diving into Rust for the first time - Mozilla Hacks</a></li>
+<li><a href="https://www.codementor.io/steveklabnik/interview-with-steve-klabnik-how-rust-compares-to-other-languages-and-more-8t5ut6nau">Interview with Steve Klabnik: How Rust Compares to Other Languages and More</a></li>
+</ul>
+<h2 id="setting-up-a-local-dev-environment">Setting up a local dev environment</h2>
+<p>First I had to install the software package rustup. It is described how to achieve that on the rust website. 
+Unfortunately was the Arch Linux rustup package which I have installed via pacman not working for me. 
+It seems for the the problem was that I missed to configure a default toolchain. I havn't followed this approach.
+So that I decided to go with the default install doc <a href="https://www.rust-lang.org/en-US/install.html">Install Rust</a></p>
+<pre><code>curl https://sh.rustup.rs -sSf | sh
+source $HOME/.cargo/env
+</code></pre>
+
+<p>In case you want to update your installation, simple type in:</p>
+<pre><code>rustup update &amp;&amp; cargo update
+</code></pre>
+
+<p>After that I have checked the version of the installed rust compiler using</p>
+<pre><code>$ rustc --version &amp;&amp; cargo --version
+rustc 1.26.2 (594fb253c 2018-06-01)
+cargo 1.26.0 (0e7c5a931 2018-04-06)
+</code></pre>
+
+<p>My current local rust/cargo installation is 13 MB big which is quite small:</p>
+<pre><code>$ du -sh ~/.cargo
+13M /home/benni/.cargo
+</code></pre>
+
+<p>I have decided to use vi as a editor. So that it is not needed to install any IDE.</p>
+<h2 id="hello-world-program">Hello World Program</h2>
+<p>Our first program is a hello world programm which only prints out "Hello World"</p>
+<p>Create the file "hello.rs" with this content:</p>
+<pre><code>/// The main function
+fn main() {
+    // Print text
+    println!(&quot;Hello World!&quot;);
+}
+</code></pre>
+
+<p>Compile the program</p>
+<pre><code>rustc hello.rs
+</code></pre>
+
+<p>And run it</p>
+<pre><code>./hello
+</code></pre>
+
+<p>You will see the expected output.</p>
+<h2 id="a-serious-example">A serious example</h2>
+<p>After we have installed rust and have compiled our first program we are now using rust for a more serious example.
+What means serius? Nowadays has everything an API. Therefore we are developing a simple REST API plus showing how to test rust source code.</p>
+<p>Developing a REST application efforts a lot more knowledge about Rust. Therefore I read a bunch of ressources</p>
+<ul>
+<li><a href="https://github.com/rustless/rustless">rustless/rustless</a></li>
+<li><a href="https://medium.com/sean3z/building-a-restful-crud-api-with-rust-1867308352d8">Build a CRUD API with Rust</a></li>
+<li><a href="http://www.arewewebyet.org/">Are we web yet?</a></li>
+</ul>
+<h3 id="creating-the-rest-api">Creating the REST API</h3>
+<p>Creating the project</p>
+<pre><code>$ cargo new hello-api --bin &amp;&amp; cd hello-api
+     Created binary (application) `hello-api` project
+</code></pre>
+
+<p>Adding the dependencies to file Cargo.toml</p>
+<pre><code>[dependencies]
+rocket = &quot;0.3.12&quot;
+rocket_codegen = &quot;0.3.12&quot;
+serde = &quot;1.0&quot;
+serde_json = &quot;1.0&quot;
+serde_derive = &quot;1.0&quot;
+
+[dependencies.rocket_contrib]
+default-features = false
+features = [&quot;json&quot;]
+#path = &quot;../Rocket/contrib/lib&quot;
+</code></pre>
+
+<p>Adding the needed source code to src/main.rs</p>
+<pre><code>#![feature(plugin, decl_macro)]
+#![plugin(rocket_codegen)]
+
+extern crate rocket;
+#[macro_use] extern crate rocket_contrib;
+#[macro_use] extern crate serde_derive;
+
+#[cfg(test)] mod tests;
+
+use rocket_contrib::{Json, Value};
+
+
+#[derive(Serialize, Deserialize)]
+struct HelloInput{
+    name: String
+}
+
+
+#[get(&quot;/&quot;, format = &quot;application/json&quot;)]
+fn index() -&gt; Json&lt;Value&gt; {
+    Json(json!({
+        &quot;status&quot;: &quot;OK&quot;,
+    }))
+}
+
+#[post(&quot;/&quot;, format = &quot;application/json&quot;, data = &quot;&lt;json_input&gt;&quot;)]
+fn hello(json_input: Json&lt;HelloInput&gt;) -&gt; Json&lt;Value&gt; {
+    Json(json!({
+        &quot;hello&quot;: json_input.name,
+    }))
+}
+
+#[error(404)]
+fn not_found() -&gt; Json&lt;Value&gt; {
+    Json(json!({
+        &quot;status&quot;: &quot;error&quot;,
+        &quot;reason&quot;: &quot;Resource was not found.&quot;
+    }))
+}
+
+fn rocket() -&gt; rocket::Rocket {
+    rocket::ignite()
+        .mount(&quot;/&quot;, routes![index])
+        .mount(&quot;/hello&quot;, routes![hello])
+        .catch(errors![not_found])
+}
+
+fn main() {
+    rocket().launch();
+}
+</code></pre>
+
+<p>Compiling the software</p>
+<pre><code>cargo build
+</code></pre>
+
+<p>This build has failed with the error message "<em>Installed version is: 1.26.2 (2018-06-01). Minimum required: 1.27.0-nightly (2018-04-26).</em>".
+Therefore we are updating the installation to nigthly using this commands:</p>
+<pre><code>rustup default nightly
+rustup update &amp;&amp; cargo update
+</code></pre>
+
+<p>Now we are using the following versions:</p>
+<pre><code>$ rustc --version &amp;&amp; cargo --version
+rustc 1.28.0-nightly (2a0062974 2018-06-09)
+cargo 1.28.0-nightly (e2348c2db 2018-06-07)
+</code></pre>
+
+<p>Now we are building again</p>
+<pre><code>$ cargo build
+[...]
+Finished dev [unoptimized + debuginfo] target(s) in 53.42s
+</code></pre>
+
+<p>Looks good. So let us run the REST API.</p>
+<pre><code>$ cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.06s
+     Running `target/debug/hello-api`
+🔧  Configured for development.
+    =&gt; address: localhost
+    =&gt; port: 8000
+    =&gt; log: normal
+    =&gt; workers: 8
+    =&gt; secret key: generated
+    =&gt; limits: forms = 32KiB
+    =&gt; tls: disabled
+🛰  Mounting '/hello':
+    =&gt; GET /hello/&lt;name&gt;/&lt;age&gt;
+🚀  Rocket has launched from http://localhost:8000
+</code></pre>
+
+<p>Let's test the REST API with a GET /</p>
+<pre><code>$ curl http://localhost:8000/
+{&quot;status&quot;:&quot;OK&quot;}
+</code></pre>
+
+<p>Ant now with a POST /hello with some input data:</p>
+<pre><code>$ curl  \
+  --request POST \
+  --header &quot;Content-Type: application/json&quot; \
+  --data '{&quot;name&quot;:&quot;benni&quot;}' \
+  http://localhost:8000/hello
+{&quot;hello&quot;:&quot;benni&quot;}
+</code></pre>
+
+<h3 id="testing-our-software">Testing our Software</h3>
+<p>Test cases are important to validate our API. So that we are writing up a few unit test. Just add these lines in "src/tests.rs</p>
+<pre><code>use rocket;
+use rocket::local::Client;
+use rocket::http::{Status, ContentType};
+
+#[test]
+fn test_not_found() {
+        let client = Client::new(rocket()).unwrap();
+
+    let res = client.get(&quot;/not_found&quot;)
+            .header(ContentType::JSON)
+                .dispatch();
+    assert_eq!(res.status(), Status::NotFound);
+}
+
+#[test]
+fn test_alive() {
+        let client = Client::new(rocket()).unwrap();
+
+    let mut res = client.get(&quot;/&quot;)
+            .header(ContentType::JSON)
+                .dispatch();
+    let body = res.body_string().unwrap();
+    assert_eq!(res.status(), Status::Ok);
+    assert!(body.contains(&quot;OK&quot;));
+}
+
+#[test]
+fn test_post_hello() {
+        let client = Client::new(rocket()).unwrap();
+
+    let mut res = client.post(&quot;/hello&quot;)
+        .header(ContentType::JSON)
+        .body(r#&quot;{ &quot;name&quot;: &quot;benni&quot; }&quot;#)
+        .dispatch();
+
+    assert_eq!(res.status(), Status::Ok);
+        let body = res.body().unwrap().into_string().unwrap();
+        assert!(body.contains(&quot;hello&quot;));
+}
+</code></pre>
+
+<p>And run:</p>
+<pre><code>$ cargo test
+[...]
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+</code></pre>
+
+<h1 id="conclusion">Conclusion</h1>
+<p>My first try with Rust took me about 6 hours. After 6 hours I am able write very simple programs including test cases and I am able to work with Rust CLI and dependencies.
+1 1/2 year ago I have learned go. With go I had a really great learning curve. 
+Right now I made with Rust my very first steps but it seems for me Rust is not very hard to learn if you are familiar with C/C++ like languages.
+What I really apprechiate after my first "work" with Rust is:</p>
+<ul>
+<li>The existing toolchain with good cli commands</li>
+<li>the existing dependency management</li>
+<li>The integrated unit testing</li>
+</ul>
+<p>On the other side of the coin I have to say that the Rust syntax feels a bit strange for me. Especially Rust macros and the extern statement are parts which I am copy-and-paste right now. 
+I guess I need to use it more often then it becomes easier.</p>
+<p>From this starting point I am planning to invest a bit more time into Rust to see if it fits for my personal purposes.</p>
+<h1 id="links">Links</h1>
+<ul>
+<li><a href="https://rocket.rs/">Rocket</a></li>
+<li><a href="https://api.rocket.rs/rocket/">Rocket API</a></li>
+<li><a href="https://github.com/SergioBenitez/Rocket">SergioBenitez/Rocket</a></li>
+</ul>
+<hr />
+<pre><code>Created: 2018-06-10
+Updated: 2018-06-10
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Benjamin Boortz <bennis.blog@secure.mailbox.org></p>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/require.js"></script>
+        <script src="../../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>
