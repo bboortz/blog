@@ -324,6 +324,8 @@ I guess I need to use it more often then it becomes easier.
 
 From this starting point I am planning to invest a bit more time into Rust to see if it fits for my personal purposes.
 
+For the example source code of this blog post please refer to [bboortz/blog-examples](https://github.com/bboortz/blog-examples/tree/master/first-rust-try)
+
 
 
 # Links
