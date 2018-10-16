@@ -1,3 +1,4 @@
 pip
 mkdocs
 mkdocs-bootswatch
+mkdocs-material

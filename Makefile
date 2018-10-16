@@ -1,7 +1,8 @@
 site_install:
 	( \
+		virtualenv .venv; \
 		source .venv/bin/activate; \
-		pip install -r requirements.txt; \
+		pip install -U -r requirements.txt; \
 	)
 
 site_new:
@@ -10,17 +11,19 @@ site_new:
 		mkdocs new . \
 	)
 
-site_link:
-	ln -sf $(CURDIR)/README.md $(CURDIR)/docs/index.md
-
-site_preview: site_link
+site_preview: 
 	( \
 		source .venv/bin/activate; \
 		mkdocs serve \
 	)
 
-site_deploy: site_link
+site_deploy: 
 	( \
 		source .venv/bin/activate; \
 		mkdocs gh-deploy --clean \
+	)
+
+docker_build: 
+	( \
+		docker build -t benni-mkdocs .; \
 	)
