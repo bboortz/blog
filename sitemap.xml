@@ -2,32 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://bboortz.github.io/</loc>
-     <lastmod>2018-10-16</lastmod>
+     <lastmod>2018-12-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://bboortz.github.io/blog/2018_05_27_How-to-build-a-simple-blog-site/</loc>
-     <lastmod>2018-10-16</lastmod>
+     <lastmod>2018-12-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://bboortz.github.io/blog/2018_06_03_How-to-deploy-mkdocs-site-to-github-pages/</loc>
-     <lastmod>2018-10-16</lastmod>
+     <lastmod>2018-12-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://bboortz.github.io/blog/2018_06_10_My_first_tries_with_Rust_programming_language/</loc>
-     <lastmod>2018-10-16</lastmod>
+     <lastmod>2018-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://bboortz.github.io/blog/2018_12_27_35C3_Visit/</loc>
+     <lastmod>2018-12-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://bboortz.github.io/links/</loc>
-     <lastmod>2018-10-16</lastmod>
+     <lastmod>2018-12-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://bboortz.github.io/about/</loc>
-     <lastmod>2018-10-16</lastmod>
+     <lastmod>2018-12-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
